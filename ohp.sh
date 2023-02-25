@@ -27,7 +27,7 @@ cp ohpserver /usr/local/bin/ohpserver
 cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
 Description=SSH OHP Redirection Service
-Documentation=https://github.com/Gandring15/vps"
+Documentation=https://github.com/Rolka111111/vps"
 After=network.target nss-lookup.target
 
 [Service]
