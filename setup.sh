@@ -203,7 +203,7 @@ rm -f /root/ohp.sh
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
-Documentation=https://github.com/Gandring15/vps"
+Documentation=https://github.com/Rolka111111/vps"
 
 [Service]
 Type=oneshot
