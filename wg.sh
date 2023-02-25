@@ -20,7 +20,7 @@ IP=$(wget -qO- ipinfo.io/ip);
 echo -e "checking vps"
 # ==================================================
 # Link Hosting Kalian
-wget https://raw.githubusercontent.com/Gandring15/vps/main/wg.sh
+wget https://raw.githubusercontent.com/Rolka111111/vps/main/wg.sh
 chmod +x wg
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -110,9 +110,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://raw.githubusercontent.com/Gandring15/vps/main/addwg.sh"
-wget -O delwg "https://raw.githubusercontent.com/Gandring15/vps/main/delwg.sh"
-wget -O renewwg "https://raw.githubusercontent.com/Gandring15/vps/main/renewwg.sh"
+wget -O addwg "https://raw.githubusercontent.com/Rolka111111/vps/main/addwg.sh"
+wget -O delwg "https://raw.githubusercontent.com/Rolka111111/vps/main/delwg.sh"
+wget -O renewwg "https://raw.githubusercontent.com/Rolka111111/vps/main/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
