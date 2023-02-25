@@ -17,7 +17,7 @@ IP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
 # Link Hosting Kalian
-wget -0 https://raw.githubusercontent.com/Gandring15/vps/main/sodosok.sh"
+wget -0 https://raw.githubusercontent.com/Rolka111111/vps/main/sodosok.sh"
 chmod +x sadosok
 source /etc/os-release
 OS=$ID
@@ -107,13 +107,13 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O addss "https://raw.githubusercontent.com/Gandring15/vps/main/addss.sh"
-wget -O delss "https://raw.githubusercontent.com/Gandring15/vps/main/delss.sh"
-wget -O cekss "https://raw.githubusercontent.com/Gandring15/vps/main/cekss.sh"
-wget -O renewss "https:/raw.githubusercontent.com/Gandring15/vps/main/renewss.sh"
-wget -O /usr/bin/system https://raw.githubusercontent.com/Gandring15/vps/main/system.sh && chmod +x /usr/bin/system && cd /usr/bin && apt install -y dos2unix && dos2unix system
-wget -O /usr/bin/medo https://raw.githubusercontent.com/Gandring15/vps/main/medo.sh && chmod +x /usr/bin/medo && cd /usr/bin && apt install -y dos2unix && dos2unix medo
-wget -O /usr/bin/addcf https://raw.githubusercontent.com/Gandring15/vps/main/addcf.sh && chmod +x /usr/bin/addcf && cd /usr/bin && apt install -y dos2unix && dos2unix addcf
+wget -O addss "https://raw.githubusercontent.com/Rolka111111/vps/main/addss.sh"
+wget -O delss "https://raw.githubusercontent.com/Rolka111111/vps/main/delss.sh"
+wget -O cekss "https://raw.githubusercontent.com/Rolka111111/vps/main/cekss.sh"
+wget -O renewss "https:/raw.githubusercontent.com/Rolka111111/vps/main/renewss.sh"
+wget -O /usr/bin/system https://raw.githubusercontent.com/Rolka111111/vps/main/system.sh && chmod +x /usr/bin/system && cd /usr/bin && apt install -y dos2unix && dos2unix system
+wget -O /usr/bin/medo https://raw.githubusercontent.com/Rolka111111/vps/main/medo.sh && chmod +x /usr/bin/medo && cd /usr/bin && apt install -y dos2unix && dos2unix medo
+wget -O /usr/bin/addcf https://raw.githubusercontent.com/Rolka111111/vps/main/addcf.sh && chmod +x /usr/bin/addcf && cd /usr/bin && apt install -y dos2unix && dos2unix addcf
 chmod +x addss
 chmod +x delss
 chmod +x cekss
