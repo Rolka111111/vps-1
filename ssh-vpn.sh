@@ -34,7 +34,7 @@ commonname=DopekidVPN
 email=joashsingh14@gmail.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Gandring15/vps/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Rolka111111/vps/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -142,13 +142,13 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Gandring15/vps/main/index.html"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Rolka111111/vps/main/index.html"
 /etc/init.d/nginx restart
 cd
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Gandring15/vps/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Rolka111111/vps/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -178,7 +178,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Gandring15/vps/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Rolka111111/vps/main/squid3.conf"
 sed -i $IP2 /etc/squid/squid.conf
 
 # Install SSLH
@@ -237,7 +237,7 @@ mkdir -p /etc/gandring
 
 # install stunnel 5 
 cd /root/
-wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Gandring15/vps/main/stunnel5.zip"
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Rolka111111/vps/main/stunnel5.zip"
 unzip -o stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -250,7 +250,7 @@ rm -f stunnel5.zip
 mkdir -p /etc/stunnel5
 chmod 644 /etc/stunnel5
 # install wstunnel wireguard
-wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Gandring15/vps/main/wstunnel-x64-linux"
+wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Rolka111111/vps/main/wstunnel-x64-linux"
 cd
 mkdir -p wstunnel /etc/ /usr/local/bin/wstunnel
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/wstunnel
@@ -319,7 +319,7 @@ cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
 Description=Stunnel5 Service
 Documentation=https://stunnel.org
-Documentation=https://github.com/Gandring15/vps/main/
+Documentation=https://github.com/Rolka111111/vps/main/
 After=syslog.target network-online.target
 
 [Service]
@@ -335,7 +335,7 @@ wget -q -p https://github.com/actions/python-versions/releases/download/3.11.0-a
 chmod +x python-3.11.0-alpha.4-linux-20.04-x64.tar.gz
 chmod +x /etc/python3.11/site_customize.py
 
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Gandring15/vps/main/stunnel5.init && chmod +x stunnel5.init && ./stunnel5.init
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Rolka111111/vps/main/stunnel5.init && chmod +x stunnel5.init && ./stunnel5.init
 
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
@@ -360,7 +360,7 @@ systemctl restart stunnel5
 /etc/init.d/stunnel5 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/Gandring15/vps/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/Rolka111111/vps/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -397,10 +397,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-wget https://raw.githubusercontent.com/Gandring15/vps/main/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/Rolka111111/vps/main/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Gandring15/vps/main/issue.net && chmod +x issue.net && ./issue.net
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Rolka111111/vps/main/issue.net && chmod +x issue.net && ./issue.net
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -421,102 +421,102 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O autoreboot "https://raw.githubusercontent.com/Gandring15/vps/main/autoreboot.sh"
-wget -O addhost "https://raw.githubusercontent.com/Gandring15/vps/main/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/Gandring15/vps/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/Gandring15/vps/main/menu.sh"
-wget -O menu2 "https://raw.githubusercontent.com/Gandring15/vps/main/menu2.sh"
-wget -O addssh "https://raw.githubusercontent.com/Gandring15/vps/main/addssh.sh"
-wget -O trialssh "https://raw.githubusercontent.com/Gandring15/vps/main/trialssh.sh"
-wget -O delssh "https://raw.githubusercontent.com/Gandring15/vps/main/delssh.sh"
-wget -O member "https://raw.githubusercontent.com/Gandring15/vps/main/member.sh"
-wget -O delexp "https://raw.githubusercontent.com/Gandring15/vps/main/delexp.sh"
-wget -O cekssh "https://raw.githubusercontent.com/Gandring15/vps/main/cekssh.sh"
-wget -O restart "https://raw.githubusercontent.com/Gandring15/vps/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Gandring15/vps/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/Gandring15/vps/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/Gandring15/vps/main/ram.sh"
-wget -O renewssh "https://raw.githubusercontent.com/Gandring15/vps/main/renewssh.sh"
-wget -O autokill "https://raw.githubusercontent.com/Gandring15/vps/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Gandring15/vps/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Gandring15/vps/main/tendang.sh"
-wget -O clearlog "https://raw.githubusercontent.com/Gandring15/vps/main/clearlog.sh"
-wget -O changeport "https://raw.githubusercontent.com/Gandring15/vps/main/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/Gandring15/vps/main/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/Gandring15/vps/main/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/Gandring15/vps/main/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/Gandring15/vps/main/portsstp.sh"
-wget -O portsquid "https://raw.githubusercontent.com/Gandring15/vps/main/portsquid.sh"
-wget -O portv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/portv2ray.sh"
-wget -O portvless "https://raw.githubusercontent.com/Gandring15/vps/main/portvless.sh"
-wget -O webmin "https://raw.githubusercontent.com/Gandring15/vps/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/Gandring15/vps/main/xp.sh"
-wget -O swapkvm "https://raw.githubusercontent.com/Gandring15/vps/main/swapkvm.sh"
-wget -O addv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/addv2ray.sh"
-wget -O addvless "https://raw.githubusercontent.com/Gandring15/vps/main/addvless.sh"
-wget -O addvless-grpc "https://raw.githubusercontent.com/Gandring15/vps/main/addvless-grpc.sh"
-wget -O addtrojan "https://raw.githubusercontent.com/Gandring15/vps/main/addtrojan.sh"
-wget -O delv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/delv2ray.sh"
-wget -O delvless "https://raw.githubusercontent.com/Gandring15/vps/main/delvless.sh"
-wget -O delvless-grpc "https://raw.githubusercontent.com/Gandring15/vps/main/delvless-grpc.sh"
-wget -O deltrojan "https://raw.githubusercontent.com/Gandring15/vps/main/deltrojan.sh"
-wget -O cekv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/cekv2ray.sh"
-wget -O cekvless "https://raw.githubusercontent.com/Gandring15/vps/main/cekvless.sh"
-wget -O cekvless-grpc "https://raw.githubusercontent.com/Gandring15/vps/main/cekvless-grpc.sh"
-wget -O cektrojan "https://raw.githubusercontent.com/Gandring15/vps/main/cektrojan.sh"
-wget -O renewv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/renewv2ray.sh"
-wget -O renewvless "https://raw.githubusercontent.com/Gandring15/vps/main/renewvless.sh"
-wget -O renewvless-grpc "https://raw.githubusercontent.com/Gandring15/vps/main/renewvless-grpc.sh"
-wget -O renewtrojan "https://raw.githubusercontent.com/Gandring15/vps/main/renewtrojan.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Gandring15/vps/main/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/Gandring15/vps/main/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/Gandring15/vps/main/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/Gandring15/vps/main/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/Gandring15/vps/main/cektrgo.sh"
-wget -O bekap "https://raw.githubusercontent.com/Gandring15/vps/main/bekap.sh"
-wget -O l2tp "https://raw.githubusercontent.com/Gandring15/vps/main/l2tp.sh"
-wget -O medo "https://raw.githubusercontent.com/Gandring15/vps/main/medo.sh"
-wget -O menu "https://raw.githubusercontent.com/Gandring15/vps/main/menu.sh"
-wget -O paneli "https://raw.githubusercontent.com/Gandring15/vps/main/paneli.sh"
-wget -O ppt "https://raw.githubusercontent.com/Gandring15/vps/main/ppt.sh"
-wget -O ssh "0https://raw.githubusercontent.com/Gandring15/vps/main/ssh.sh"
-wget -O ssssr "https://raw.githubusercontent.com/Gandring15/vps/main/ssssr.sh"
-wget -O sstpp "https://raw.githubusercontent.com/Gandring15/vps/main/sstpp.sh"
-wget -O status "https://raw.githubusercontent.com/Gandring15/vps/main/status.sh"
-wget -O system "https://raw.githubusercontent.com/Gandring15/vps/main/system.sh"
-wget -O trojaan "https://raw.githubusercontent.com/Gandring15/vps/main/trojaan.sh"
-wget -O v2raay "https://raw.githubusercontent.com/Gandring15/vps/main/v2raay.sh"
-wget -O wgr "https://raw.githubusercontent.com/Gandring15/vps/main/wgr.sh"
-wget -O bbr "https://raw.githubusercontent.com/Gandring15/vps/main/bbr.sh"
-wget -O bannerku "https://raw.githubusercontent.com/Gandring15/vps/main/bannerku"
-wget -O bannerDOMAIN "https://raw.githubusercontent.com/Gandring15/vps/main/bannerDOMAIN"
-wget -O bannerL2TP "https://raw.githubusercontent.com/Gandring15/vps/main/bannerL2TP"
-wget -O bannerPPTP "https://raw.githubusercontent.com/Gandring15/vps/main/bannerPPTP"
-wget -O bannerSHADOWSOCK "https://raw.githubusercontent.com/Gandring15/vps/main/bannerSHADOWSOCK"
-wget -O bannerSSH "https://raw.githubusercontent.com/Gandring15/vps/main/bannerSSH"
-wget -O bannerSSTP "https://raw.githubusercontent.com/Gandring15/vps/main/bannerSSTP"
-wget -O bannerSYSTEM "https://raw.githubusercontent.com/Gandring15/vps/main/bannerSYSTEM"
-wget -O bannerTROJAN "https://raw.githubusercontent.com/Gandring15/vps/main/bannerTROJAN"
-wget -O bannerV2RAY "https://raw.githubusercontent.com/Gandring15/vps/main/bannerV2RAY"
-wget -O bannerVPN "https://raw.githubusercontent.com/Gandring15/vps/main/bannerVPN"
-wget -O bannerWIREGUARD "https://raw.githubusercontent.com/Gandring15/vps/main/bannerWIREGUARD"
-wget -O bannerBACKUP "https://raw.githubusercontent.com/Gandring15/vps/main/bannerBACKUP"
-wget -O addcf "https://raw.githubusercontent.com/Gandring15/vps/main/addcf.sh"
-wget -O wg "https://raw.githubusercontent.com/Gandring15/vps/main/wg.sh"
-wget -O cff "https://raw.githubusercontent.com/Gandring15/vps/main/cff.sh"
-wget -O cfh "https://raw.githubusercontent.com/Gandring15/vps/main/cfh.sh"
+wget -O autoreboot "https://raw.githubusercontent.com/Rolka111111/vps/main/autoreboot.sh"
+wget -O addhost "https://raw.githubusercontent.com/Rolka111111/vps/main/addhost.sh"
+wget -O about "https://raw.githubusercontent.com/Rolka111111/vps/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/Rolka111111/vps/main/menu.sh"
+wget -O menu2 "https://raw.githubusercontent.com/Rolka111111/vps/main/menu2.sh"
+wget -O addssh "https://raw.githubusercontent.com/Rolka111111/vps/main/addssh.sh"
+wget -O trialssh "https://raw.githubusercontent.com/Rolka111111/vps/main/trialssh.sh"
+wget -O delssh "https://raw.githubusercontent.com/Rolka111111/vps/main/delssh.sh"
+wget -O member "https://raw.githubusercontent.com/Rolka111111/vps/main/member.sh"
+wget -O delexp "https://raw.githubusercontent.com/Rolka111111/vps/main/delexp.sh"
+wget -O cekssh "https://raw.githubusercontent.com/Rolka111111/vps/main/cekssh.sh"
+wget -O restart "https://raw.githubusercontent.com/Rolka111111/vps/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Rolka111111/vps/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/Rolka111111/vps/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/Rolka111111/vps/main/ram.sh"
+wget -O renewssh "https://raw.githubusercontent.com/Rolka111111/vps/main/renewssh.sh"
+wget -O autokill "https://raw.githubusercontent.com/Rolka111111/vps/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/Rolka111111/vps/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/Rolka111111/vps/main/tendang.sh"
+wget -O clearlog "https://raw.githubusercontent.com/Rolka111111/vps/main/clearlog.sh"
+wget -O changeport "https://raw.githubusercontent.com/Rolka111111/vps/main/changeport.sh"
+wget -O portovpn "https://raw.githubusercontent.com/Rolka111111/vps/main/portovpn.sh"
+wget -O portwg "https://raw.githubusercontent.com/Rolka111111/vps/main/portwg.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/Rolka111111/vps/main/porttrojan.sh"
+wget -O portsstp "https://raw.githubusercontent.com/Rolka111111/vps/main/portsstp.sh"
+wget -O portsquid "https://raw.githubusercontent.com/Rolka111111/vps/main/portsquid.sh"
+wget -O portv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/portv2ray.sh"
+wget -O portvless "https://raw.githubusercontent.com/Rolka111111/vps/main/portvless.sh"
+wget -O webmin "https://raw.githubusercontent.com/Rolka111111/vps/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/Rolka111111/vps/main/xp.sh"
+wget -O swapkvm "https://raw.githubusercontent.com/Rolka111111/vps/main/swapkvm.sh"
+wget -O addv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/addv2ray.sh"
+wget -O addvless "https://raw.githubusercontent.com/Rolka111111/vps/main/addvless.sh"
+wget -O addvless-grpc "https://raw.githubusercontent.com/Rolka111111/vps/main/addvless-grpc.sh"
+wget -O addtrojan "https://raw.githubusercontent.com/Rolka111111/vps/main/addtrojan.sh"
+wget -O delv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/delv2ray.sh"
+wget -O delvless "https://raw.githubusercontent.com/Rolka111111/vps/main/delvless.sh"
+wget -O delvless-grpc "https://raw.githubusercontent.com/Rolka111111/vps/main/delvless-grpc.sh"
+wget -O deltrojan "https://raw.githubusercontent.com/Rolka111111/vps/main/deltrojan.sh"
+wget -O cekv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/cekv2ray.sh"
+wget -O cekvless "https://raw.githubusercontent.com/Rolka111111/vps/main/cekvless.sh"
+wget -O cekvless-grpc "https://raw.githubusercontent.com/Rolka111111/vps/main/cekvless-grpc.sh"
+wget -O cektrojan "https://raw.githubusercontent.com/Rolka111111/vps/main/cektrojan.sh"
+wget -O renewv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/renewv2ray.sh"
+wget -O renewvless "https://raw.githubusercontent.com/Rolka111111/vps/main/renewvless.sh"
+wget -O renewvless-grpc "https://raw.githubusercontent.com/Rolka111111/vps/main/renewvless-grpc.sh"
+wget -O renewtrojan "https://raw.githubusercontent.com/Rolka111111/vps/main/renewtrojan.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/Rolka111111/vps/main/certv2ray.sh"
+wget -O addtrgo "https://raw.githubusercontent.com/Rolka111111/vps/main/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/Rolka111111/vps/main/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/Rolka111111/vps/main/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/Rolka111111/vps/main/cektrgo.sh"
+wget -O bekap "https://raw.githubusercontent.com/Rolka111111/vps/main/bekap.sh"
+wget -O l2tp "https://raw.githubusercontent.com/Rolka111111/vps/main/l2tp.sh"
+wget -O medo "https://raw.githubusercontent.com/Rolka111111/vps/main/medo.sh"
+wget -O menu "https://raw.githubusercontent.com/Rolka111111/vps/main/menu.sh"
+wget -O paneli "https://raw.githubusercontent.com/Rolka111111/vps/main/paneli.sh"
+wget -O ppt "https://raw.githubusercontent.com/Rolka111111/vps/main/ppt.sh"
+wget -O ssh "0https://raw.githubusercontent.com/Rolka111111/vps/main/ssh.sh"
+wget -O ssssr "https://raw.githubusercontent.com/Rolka111111/vps/main/ssssr.sh"
+wget -O sstpp "https://raw.githubusercontent.com/Rolka111111/vps/main/sstpp.sh"
+wget -O status "https://raw.githubusercontent.com/Rolka111111/vps/main/status.sh"
+wget -O system "https://raw.githubusercontent.com/Rolka111111/vps/main/system.sh"
+wget -O trojaan "https://raw.githubusercontent.com/Rolka111111/vps/main/trojaan.sh"
+wget -O v2raay "https://raw.githubusercontent.com/Rolka111111/vps/main/v2raay.sh"
+wget -O wgr "https://raw.githubusercontent.com/Rolka111111/vps/main/wgr.sh"
+wget -O bbr "https://raw.githubusercontent.com/Rolka111111/vps/main/bbr.sh"
+wget -O bannerku "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerku"
+wget -O bannerDOMAIN "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerDOMAIN"
+wget -O bannerL2TP "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerL2TP"
+wget -O bannerPPTP "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerPPTP"
+wget -O bannerSHADOWSOCK "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerSHADOWSOCK"
+wget -O bannerSSH "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerSSH"
+wget -O bannerSSTP "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerSSTP"
+wget -O bannerSYSTEM "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerSYSTEM"
+wget -O bannerTROJAN "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerTROJAN"
+wget -O bannerV2RAY "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerV2RAY"
+wget -O bannerVPN "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerVPN"
+wget -O bannerWIREGUARD "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerWIREGUARD"
+wget -O bannerBACKUP "https://raw.githubusercontent.com/Rolka111111/vps/main/bannerBACKUP"
+wget -O addcf "https://raw.githubusercontent.com/Rolka111111/vps/main/addcf.sh"
+wget -O wg "https://raw.githubusercontent.com/Rolka111111/vps/main/wg.sh"
+wget -O cff "https://raw.githubusercontent.com/Rolka111111/vps/main/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/Rolka111111/vps/main/cfh.sh"
 wget -O host "https://raw.githubusercontent.com/Gandring15/vps/main/host.sh"
-wget -O bw "https://raw.githubusercontent.com/Gandring15/vps/main/bw.sh"
-wget -O update "https://raw.githubusercontent.com/Gandring15/vps/main/update.sh"
-wget -O host "https://raw.githubusercontent.com/Gandring15/vps/main/host.sh"
-wget -O portsshws https://raw.githubusercontent.com/Gandring15/vps/main/portsshwstls.sh"
-wget -O portsshwsnontls https://raw.githubusercontent.com/Gandring15/vps/main/portsshwsnontls.sh"
-wget -0 wstunnel https://raw.githubusercontent.com/Gandring15/vps/main/wstunnel.sh"
-wget -0 wss.wstunnel https://raw.githubusercontent.com/Gandring15/vps/main/wsstunnel.sh"
-wget -0 privoxy https://raw.githubusercontent.com/Gandring15/vps/main/privoxy.sh"
-wget -0 index.php https://raw.githubusercontent.com/Gandring15/vps/main/index.php"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/Gandring15/vps/main/user-limit.sh && chmod +x /usr/bin/user-limit"
-wget -0 privoxy https://raw.githubusercontent.com/Gandring15/vps/main/privoxy.py"
+wget -O bw "https://raw.githubusercontent.com/Rolka111111/vps/main/bw.sh"
+wget -O update "https://raw.githubusercontent.com/Rolka111111/vps/main/update.sh"
+wget -O host "https://raw.githubusercontent.com/Rolka111111/vps/main/host.sh"
+wget -O portsshws https://raw.githubusercontent.com/Rolka111111/vps/main/portsshwstls.sh"
+wget -O portsshwsnontls https://raw.githubusercontent.com/Rolka111111/vps/main/portsshwsnontls.sh"
+wget -0 wstunnel https://raw.githubusercontent.com/Rolka111111/vps/main/wstunnel.sh"
+wget -0 wss.wstunnel https://raw.githubusercontent.com/Rolka111111/vps/main/wsstunnel.sh"
+wget -0 privoxy https://raw.githubusercontent.com/Rolka111111/vps/main/privoxy.sh"
+wget -0 index.php https://raw.githubusercontent.com/Rolka111111/vps/main/index.php"
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/Rolka111111/vps/main/user-limit.sh && chmod +x /usr/bin/user-limit"
+wget -0 privoxy https://raw.githubusercontent.com/Rolka111111/vps/main/privoxy.py"
 chmod +x autoreboot
 chmod +x addhost
 chmod +x menu
