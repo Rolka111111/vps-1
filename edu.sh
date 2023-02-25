@@ -16,18 +16,18 @@ LIGHT='\033[0;37m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
 # Link Hosting Kalian
-wget https://raw.githubusercontent.com/Gandring15/vps/main/websocket.py
+wget https://raw.githubusercontent.com/Rolka111111/vps/main/websocket.py
 chmod +x /usr/local/bin/websocket
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/Gandring15/vps/main/ws-tls.py
+wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/Rolka111111/vps/main/ws-tls.py
 chmod +x /usr/local/bin/ws-tls
 
 # Installing Service
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
 Description=Python Proxy Mod By gandring
-Documentation=https://github.com/Gandring15/vps"
+Documentation=https://github.com/Rolka111111/vps"
 After=network.target nss-lookup.target
 
 [Service]
@@ -48,14 +48,14 @@ systemctl enable ws-tls
 systemctl restart ws-tls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/Gandring15/vps/main/ws-nontls.py
+wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/Rolka111111/vps/main/ws-nontls.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By gandring
-Documentation=https://github.com/Gandring15/vps"
+Documentation=https://github.com/Rolka111111/vps"
 After=network.target nss-lookup.target
 
 [Service]
@@ -76,14 +76,14 @@ systemctl enable ws-nontls
 systemctl restart ws-nontls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Gandring15/vps/main/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Rolka111111/vps/main/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=Python Proxy Mod By gandring
-Documentation=https://github.com/Gandring15/vps"
+Documentation=https://github.com/Rolka111111/vps"
 After=network.target nss-lookup.target
 
 [Service]
