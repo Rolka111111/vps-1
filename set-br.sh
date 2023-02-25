@@ -17,7 +17,7 @@ echo -e "checking vps"
 # Link Hosting Kalian
 curl https://rclone.org/install.sh | bash
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/Gandring15/vps/main/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/Rolka111111/vps/main/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -42,11 +42,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://raw.githubusercontent.com/Gandring15/vps/main/autobackup.sh"
-wget -O backup "https://raw.githubusercontent.com/Gandring15/vps/main/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/Gandring15/vps/main/restore.sh"
-wget -O strt "https://raw.githubusercontent.com/Gandring15/vps/main/strt.sh"
-wget -O limitspeed "https://raw.githubusercontent.com/Gandring15/vps/main/limitspeed.sh"
+wget -O autobackup "https://raw.githubusercontent.com/Rolka111111/vps/main/autobackup.sh"
+wget -O backup "https://raw.githubusercontent.com/Rolka111111/vps/main/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/Rolka111111/vps/main/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/Rolka111111/vps/main/strt.sh"
+wget -O limitspeed "https://raw.githubusercontent.com/Rolka111111/vps/main/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
