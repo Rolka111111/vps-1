@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
 # Link Hosting Kalian
-wget -0 https://raw.githubusercontent.com/Gandring15/vps/main/sstp.sh
+wget -0 https://raw.githubusercontent.com/Rolka111111/vps/main/sstp.sh
 chmod +x sstp
 IP=$(wget -qO- ipinfo.io/ip);
 IP2="s/xxxxxxxxx/$IP/g";
@@ -58,7 +58,7 @@ make
 cpack -G DEB
 dpkg -i accel-ppp.deb
 mv /etc/accel-ppp.conf.dist /etc/accel-ppp.conf
-wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/Gandring15/vps/main/accel.conf"
+wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/Rolka111111/vps/main/accel.conf"
 sed -i $MYIP2 /etc/accel-ppp.conf
 chmod +x /etc/accel-ppp.conf
 systemctl start accel-ppp
@@ -80,8 +80,8 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 #input perintah sstp
-wget -O /usr/bin/addsstp https://raw.githubusercontent.com/Gandring15/vps/main/addsstp.sh && chmod +x /usr/bin/addsstp
-wget -O /usr/bin/delsstp https://raw.githubusercontent.com/Gandring15/vps/main/delsstp.sh && chmod +x /usr/bin/delsstp
-wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/Gandring15/vps/main/ceksstp.sh && chmod +x /usr/bin/ceksstp
-wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/Gandring15/vps/main/renewsstp.sh && chmod +x /usr/bin/renewsstp
+wget -O /usr/bin/addsstp https://raw.githubusercontent.com/Rolka111111/vps/main/addsstp.sh && chmod +x /usr/bin/addsstp
+wget -O /usr/bin/delsstp https://raw.githubusercontent.com/Rolka111111/vps/main/delsstp.sh && chmod +x /usr/bin/delsstp
+wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/Rolka111111/vps/main/ceksstp.sh && chmod +x /usr/bin/ceksstp
+wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/Rolka111111/vps/main/renewsstp.sh && chmod +x /usr/bin/renewsstp
 rm -f /root/sstp.sh
